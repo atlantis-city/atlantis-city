@@ -40,25 +40,39 @@
     section {
       padding: 50px 20px;
     }
-    .btn {
-      background: linear-gradient(90deg, #007bff, #00aaff);
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.2em;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: linear-gradient(90deg, #00aaff, #007bff);
-      transform: scale(1.05);
-    }
+nav {
+  display: flex;
+  flex-direction: column; /* يجعل الأزرار فوق بعض /
+  align-items: center;
+  gap: 12px; / المسافة بين الأزرار */
+  margin-top: 15px;
+}
+
+nav a {
+  display: block;
+  width: 200px;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(90deg, #007bff, #00aaff);
+  padding: 12px 0;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: linear-gradient(90deg, #00aaff, #007bff);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00aaff;
+}
     footer {
       background: rgba(0, 0, 0, 0.5);
       padding: 20px;
       margin-top: 50px;
-      border-top: 1px solid #007bff;
+      border-top: 1px solid #ffffff;
     }
   </style>
 </head>
