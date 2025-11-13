@@ -43,30 +43,34 @@
 nav {
   display: flex;
   flex-direction: column; /* يجعل الأزرار فوق بعض /
-  align-items: center;
-  gap: 12px; / المسافة بين الأزرار */
-  margin-top: 15px;
+  align-items: center; / يوسّطها في المنتصف /
+  gap: 15px; / المسافة بين الأزرار /
+  margin-top: 25px;
 }
 
 nav a {
-  display: block;
-  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; / مسافة بين الأيقونة والنص */
+  width: 230px;
   text-decoration: none;
   color: white;
-  background: linear-gradient(90deg, #007bff, #00aaff);
-  padding: 12px 0;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #007bff, #00aaff);
+  padding: 14px 0;
+  border-radius: 10px;
   font-size: 1.1em;
   font-family: 'Poppins', sans-serif;
-  letter-spacing: 1px;
   font-weight: 500;
-  transition: 0.3s;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
-  background: linear-gradient(90deg, #00aaff, #007bff);
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #00aaff;
+  background: linear-gradient(135deg, #00aaff, #007bff);
+  transform: scale(1.07);
+  box-shadow: 0 0 15px #00aaff;
 }
     footer {
       background: rgba(0, 0, 0, 0.5);
@@ -75,13 +79,66 @@ nav a:hover {
       border-top: 1px solid #ffffff;
     }
   </style>
+  .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.4em;
+  color: #00aaff;
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.7);
+  letter-spacing: 1px;
+  animation: logoFade 1.2s ease forwards;
+  opacity: 0;
+}
+
+.logo img {
+  width: 70px; / زيدنا حجم الصورة /
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #00aaff;
+  animation: logoPulse 2s infinite alternate ease-in-out;
+}
+
+/ النص الفرعي "مدينة أتلانتس" /
+.logo small {
+  font-size: 0.6em;
+  color: #fff;
+  opacity: 0.9;
+}
+
+/ تأثير ظهور الشعار /
+@keyframes logoFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/ تأثير نبض بسيط على الشعار */
+@keyframes logoPulse {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 10px #00aaff;
+  }
+  to {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00aaff;
+  }
+}
 </head>
 <body>
   <header>
-    <h1>
-  <img src="images/atllogo.png" alt="Logo" style="width:40px; vertical-align:middle; margin-right:10px;">
-  Atlantis City - مدينة اتلانتس
-  </h1>
+<h1 class="logo">
+  <img src="images/atllogo.png" alt="Logo">
+  <span>Atlantis City - <small>مدينة أتلانتس</small></span>
+</h1>
     <nav>
       <a href="index.html">الرئيسية</a>
       <div></div>
@@ -116,3 +173,4 @@ nav a:hover {
   </footer>
 </body>
 </html>
+
